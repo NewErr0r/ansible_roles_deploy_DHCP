@@ -9,3 +9,9 @@
   service: 
     name: firewalld 
     state: restarted
+
+- name: Restarted isc-dhcp-server
+  service:
+    name: isc-dhcp-server 
+    enabled: true 
+    state: restarted     

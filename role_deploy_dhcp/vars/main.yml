@@ -1,2 +1,4 @@
 ---
 cent_path: /etc/dhcp/dhcpd.conf
+deb_path: /etc/dhcp/dhcpd.conf
+deb_isc_dhcp: /etc/default/isc-dhcp-server

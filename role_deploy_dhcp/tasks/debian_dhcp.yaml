@@ -1,0 +1,24 @@
+- name: Install all packages 
+  apt: 
+    name: "*"
+    state: latest
+    update_cache: yes 
+    force_apt_get: yes 
+
+- name: Istall DHCP
+  apt: 
+    name: isc-dhcp-server
+    state: latest
+    update_cache: yes
+
+- name: Configure interfaces 
+  template:
+    src: isc-dhcp-server.j2
+    dest: "{{ deb_isc_dhcp }}"
+
+- name: Configure DHCP
+  template:
+    src: deb_dhcpd.conf.j2
+    dest: "{{ deb_path }}"
+  notify:
+    - Restarted isc-dhcp-server

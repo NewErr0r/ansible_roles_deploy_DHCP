@@ -6,3 +6,7 @@ range: "192.168.0.100 192.168.0.200"
 option_routers: "192.168.0.1"
 option_subnet_mask: "255.255.255.0"
 option_domain_name_servers: "77.88.8.8, 8.8.8.8"
+option_domain_name: "test.local"
+option_broadcast_address: "192.168.0.255"
+
+interface_name: "eth1"
