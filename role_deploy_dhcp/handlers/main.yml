@@ -1,0 +1,11 @@
+---
+- name: Restarted DHCP
+  service:
+    name: dhcpd 
+    enabled: true 
+    state: restarted 
+
+- name: Restarted Firewalld
+  service: 
+    name: firewalld 
+    state: restarted

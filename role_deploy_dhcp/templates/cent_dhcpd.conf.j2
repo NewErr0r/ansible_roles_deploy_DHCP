@@ -1,0 +1,10 @@
+default-lease-time 600;
+max-lease-time 7200;
+ddns-update-style none;
+authoritative;
+subnet {{ subnet }} netmask {{ netmask }} {
+range {{ range }};
+option routers {{ option_routers }};
+option subnet-mask {{ option_subnet_mask }};
+option domain-name-servers {{ option_domain_name_servers }};
+}

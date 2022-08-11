@@ -1,0 +1,19 @@
+- name: Install DHCP 
+  dnf: 
+    name: dhcp-server
+    state: latest
+
+- name: Cofigure DHCP is tamlate
+  template:
+    src: cent_dhcpd.conf.j2
+    dest: "{{ cent_path }}"
+  notify: 
+    - Restarted DHCP
+
+- name: Configure Firewalld
+  firewalld: 
+    port: "67/udp"
+    permanent: yes 
+    state: enabled 
+  notify:
+    - Restarted Firewalld
